@@ -51,6 +51,7 @@ export class AppComponent {
     {name:'Vikas' , age:'67',social:['Insta','Linedin']},
     {name:'Aniket' , age:'69',social:['LinkedIn','facebook']},
     {name:'Vivek' , age:'58',social:['Insta','facebook']},
+    {name:'digivjay' , age:'59',social:['Insta','Twitter']},
   ]
   
 }
