@@ -37,8 +37,8 @@ export class AppComponent {
 
 
   show = true;
-  color = 'orange';
-
+  color = 'black';
+  bgcolor = '';
 
   person = ['Prahtmesh',"aniket" , "Akshay"];
   persondetails = [
@@ -55,4 +55,9 @@ export class AppComponent {
     {name:'digivjay' , age:'59',social:['Insta','Twitter']},
   ]
   
+  changeColor()
+  {
+    this.color = 'white';
+    this.bgcolor = 'black';
+  }
 }
