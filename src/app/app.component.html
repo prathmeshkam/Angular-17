@@ -57,4 +57,20 @@
 <ul>{{g}}</ul>
 } }
 
+<h1>---------------------------------------------------------------------------------------------------</h1>
+
+<h1>Basic Forms</h1>
+<form #formData="ngForm" (ngSubmit)="getFormData(formData.value)">
+    <input type="text" ngModel name="name" placeholder="Enter Name"> <br><br>
+    <input type="email" ngModel name="email" placeholder="Enter Email"> <br><br>
+    <input type="password" ngModel name="password" placeholder="Enter Password"> <br><br>
+    <br>
+    <button>Submit</button>
+
+    <ul>
+        <li>{{userData.name}}</li>
+        <li>{{userData.email}}</li>
+        <li>{{userData.password}}</li>
+    </ul>
+</form>
 <router-outlet></router-outlet>
