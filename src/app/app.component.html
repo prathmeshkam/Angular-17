@@ -17,12 +17,14 @@
 <button (click)="getText(box1.value)">GetText</button>
 <p>Box text is: {{display}}</p>
 
-<h1>Enjoy Counter</h1>
-
-
-<button (click)="counter('sum')">Up</button>
-<h1>{{tsum}}</h1>
-<button (click)="counter('minus')">Down</button> @if(show) {
+<button (click)="toggle()">Click Me to use Counter</button> @if(displaycounter){
+<div>
+    <h1>Enjoy Counter</h1>
+    <button (click)="counter('sum')">Up</button>
+    <h1>{{tsum}}</h1>
+    <button (click)="counter('minus')">Down</button>
+</div>
+} @if(show) {
 <h1>Yess It works</h1>
 } @if(color==='red') {
 <h1 style="color: red;">Red Color</h1>

@@ -72,4 +72,9 @@ export class AppComponent {
   }
 
 
+  displaycounter = false;
+  toggle()
+  {
+    this.displaycounter = !this.displaycounter;
+  }
 }
