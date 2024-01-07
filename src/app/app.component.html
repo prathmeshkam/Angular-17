@@ -1,14 +1,21 @@
-<h1>To do list</h1>
-<input type="text" placeholder="Enter task" name="task" #task> <br>
-<br>
+<div class="card" style="width:8cm; margin-left: 20cm;margin-top: 3cm;">
+    <div class="card-body">
+        <h1 class="card-title">To do list</h1>
+        <input type="text" placeholder="Enter task" name="task" #task> <br>
+        <br>
+        <button class="btn btn-success" (click)="addtask(task.value)" (click)="high()">Add Task</button>
+        <br>
+        <div class="card-text" style="margin-top: 10px;">
 
-<button (click)="addtask(task.value)">Add Task</button> @for(i of taskdetail;track i){
-<ul>
-    <li>{{i.name}} <button (click)="Remove(i.id)">Remove</button></li>
+            @for(i of taskdetail;track i){
+            <ul>
+                <li [style.backgroundColor]="color">{{i.name}} <button class="btn btn-danger" (click)="Remove(i.id)">Remove</button></li>
+            </ul>
+            }
+        </div>
 
-
-</ul>
-}
+    </div>
+</div>
 
 <router-outlet>
 </router-outlet>

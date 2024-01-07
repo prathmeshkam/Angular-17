@@ -15,11 +15,16 @@ export class AppComponent {
 
   taskdetail:any[] = [];
 
-
+  color:string = "";
   addtask(item:string)
   {
-    this.taskdetail.push({id:this.taskdetail.length,name:item})
+
+    this.taskdetail.push({id:this.taskdetail.length,name:item}); 
     
+  }
+  high()
+  {
+    this.color = 'yellow';
   }
 
   Remove(id:number)

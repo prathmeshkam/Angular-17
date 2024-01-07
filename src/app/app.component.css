@@ -1,0 +1,8 @@
+        .btn-danger {
+            float: right;
+            width: 100px;
+            height: 25px;
+            font-size: small;
+            line-height: 5px;
+            font-weight: bold;
+        }
