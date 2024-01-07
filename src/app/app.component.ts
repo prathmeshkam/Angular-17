@@ -12,4 +12,18 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'AngBootstrap';
+
+  taskdetail:any[] = [];
+
+
+  addtask(item:string)
+  {
+    this.taskdetail.push({id:this.taskdetail.length,name:item})
+    
+  }
+
+  Remove(id:number)
+  {
+    this.taskdetail = this.taskdetail.filter(i => i.id!==id);
+  }
 }
