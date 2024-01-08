@@ -34,5 +34,10 @@ export class AppComponent {
   }
 
   data = 10;
-  
+
+
+  updateChild()
+  {
+    this.data = Math.floor(Math.random()*10);
+  }
 }
