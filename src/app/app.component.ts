@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgbAlertModule,],
+  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -31,4 +32,7 @@ export class AppComponent {
   {
     this.taskdetail = this.taskdetail.filter(i => i.id!==id);
   }
+
+  data = 10;
+  
 }
