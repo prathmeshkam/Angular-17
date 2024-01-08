@@ -12,14 +12,25 @@
                 <li [style.backgroundColor]="color">{{i.name}} <button class="btn btn-danger" (click)="Remove(i.id)">Remove</button></li>
             </ul>
             }
+
         </div>
 
     </div>
 </div>
+
+
 <h1> Calling Child Component </h1>
 
-<app-child [item]="data"></app-child>
-<button (click)="updateChild()">Update Child Value</button>
+<!-- <app-child [item]="data"></app-child>
+<button (click)="updateChild()">Update Child Value</button> -->
+
+
+<h1> Resuable Component</h1>
+
+@for(u of userData;track u) {
+
+<app-child [user]="u"></app-child>
+}
 
 <router-outlet>
 </router-outlet>
