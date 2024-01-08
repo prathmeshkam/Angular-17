@@ -24,12 +24,19 @@
 <!-- <app-child [item]="data"></app-child>
 <button (click)="updateChild()">Update Child Value</button> -->
 
-
 <h1> Resuable Component</h1>
 
-@for(u of userData;track u) {
-<app-child [user]="u"></app-child>
-}
 
+<div>
+    @for(u of userData;track u) {
+    <app-child [user]="u"></app-child>
+    }
+</div>
+
+
+<h1>Calling child 1</h1>
+
+<app-child1 (updateData)="updateData($event)"></app-child1>
+<h1>{{child1data}}</h1>
 <router-outlet>
 </router-outlet>

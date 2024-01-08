@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChildComponent } from './child/child.component';
+import { Child1Component } from './child1/child1.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent],
+  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -48,4 +49,10 @@ export class AppComponent {
     {name:"Vivek",age:12, email:"vivek@gmail.com"},
   ]
 
+  child1data:string = "";
+  updateData(item:string)
+  {
+    console.warn(item);
+    this.child1data = item;
+  }
 }
