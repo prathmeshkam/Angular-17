@@ -5,11 +5,12 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChildComponent } from './child/child.component';
 import { Child1Component } from './child1/child1.component';
 import {FormsModule} from '@angular/forms';
+import { AddtwoPipe } from './pipes/addtwo.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule],
+  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule,AddtwoPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

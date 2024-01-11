@@ -22,7 +22,7 @@
 <h1> Calling Child Component </h1>
 
 <!-- <app-child [item]="data"></app-child>
-<button (click)="updateChild()">Update Child Value</button> -->
+    <button (click)="updateChild()">Update Child Value</button> -->
 
 <h1> Resuable Component</h1>
 
@@ -49,5 +49,8 @@
 <p>{{titleData | lowercase}}</p>
 <p>{{titleData | titlecase}}</p>
 
+
+<h1>Custom Pipes</h1>
+<h1>{{20 |addtwo:40:60}}</h1>
 <router-outlet>
 </router-outlet>
