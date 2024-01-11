@@ -1,7 +1,7 @@
 <div class="card" style="width:8cm; margin-left: 20cm;margin-top: 3cm;">
     <div class="card-body">
         <h1 class="card-title">To do list</h1>
-        <input type="text" placeholder="Enter task" name="task" #task> <br>
+        <input type="text" placeholder="Enter task" name="task" #task onfocus="this.value=''"> <br>
         <br>
         <button class="btn btn-success" (click)="addtask(task.value)" (click)="high()">Add Task</button>
         <br>
@@ -41,7 +41,13 @@
 
 <h1>Two Way binding</h1>
 <input #input type="text" placeholder="Enter Any" [(ngModel)]="binding">
-
 <p>{{binding}}</p>
+
+<h1>Pipes</h1>
+<h1>{{"This is me"}}</h1>
+<p>{{titleData | uppercase}}</p>
+<p>{{titleData | lowercase}}</p>
+<p>{{titleData | titlecase}}</p>
+
 <router-outlet>
 </router-outlet>

@@ -59,4 +59,5 @@ export class AppComponent {
   }
 
   binding:any;
+  titleData:string = "IAmPrathmesh";
 }
