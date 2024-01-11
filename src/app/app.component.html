@@ -38,5 +38,10 @@
 
 <app-child1 (updateData)="updateData($event)"></app-child1>
 <h1>{{child1data}}</h1>
+
+<h1>Two Way binding</h1>
+<input #input type="text" placeholder="Enter Any" [(ngModel)]="binding">
+
+<p>{{binding}}</p>
 <router-outlet>
 </router-outlet>

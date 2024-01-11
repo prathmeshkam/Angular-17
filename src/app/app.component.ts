@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChildComponent } from './child/child.component';
 import { Child1Component } from './child1/child1.component';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component],
+  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -54,5 +55,8 @@ export class AppComponent {
   {
     console.warn(item);
     this.child1data = item;
+
   }
+
+  binding:any;
 }
