@@ -8,7 +8,7 @@ import { Component,Input } from '@angular/core';
   styleUrl: './child.component.css'
 })
 export class ChildComponent {
-// @Input() item=123;
+// @Input() item;
 @Input() user:{name:string,age:number,email:string}={name:"",age:-1,email:''};
 
 }

@@ -19,10 +19,10 @@
 </div>
 
 
-<h1> Calling Child Component </h1>
+<!-- <h1> Calling Child Component </h1>
 
-<!-- <app-child [item]="data"></app-child>
-    <button (click)="updateChild()">Update Child Value</button> -->
+<app-child [item]="data"></app-child>
+    <button (click)="updateChild()">Update Child Value</button>
 
 <h1> Resuable Component</h1>
 
@@ -51,6 +51,29 @@
 
 
 <h1>Custom Pipes</h1>
-<h1>{{20 |addtwo:40:60}}</h1>
+<h1>{{20 |addtwo:40:60}}</h1> -->
+
+<h1>Template Driven Form</h1>
+
+<form #f="ngForm" (ngSubmit)="getform(f.controls)">
+    <input type="text" name="name" ngModel placeholder="Enter Name">
+    <br><br>
+    <input type="email" name="email" ngModel placeholder="Enter Email">
+    <br><br>
+    <button>Submit</button>
+
+</form>
+<button (click)="getform(f.value)">Submit From Outside</button>
+
+<br><br>
+<h1>Reactive Form</h1>
+<form [formGroup]="loginform" (ngSubmit)="getReactiveForm()">
+    <input type="text" placeholder="Enter Name" formControlName="name">
+    <br><br>
+    <input type="email" placeholder="Enter Email" formControlName="email">
+    <br><br>
+    <button>Submit</button>
+</form>
+
 <router-outlet>
 </router-outlet>

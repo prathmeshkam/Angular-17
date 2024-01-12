@@ -6,11 +6,13 @@ import { ChildComponent } from './child/child.component';
 import { Child1Component } from './child1/child1.component';
 import {FormsModule} from '@angular/forms';
 import { AddtwoPipe } from './pipes/addtwo.pipe';
+import {ReactiveFormsModule} from '@angular/forms';
+import { FormControl , FormGroup , FormControlName } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule,AddtwoPipe],
+  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule,AddtwoPipe,ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -61,4 +63,20 @@ export class AppComponent {
 
   binding:any;
   titleData:string = "IAmPrathmesh";
+
+  getform(item:any)
+  {
+    console.warn(item);
+  }
+
+
+  // Reactive Form
+  loginform = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl('')
+  })
+
+  getReactiveForm(){
+    console.warn(this.loginform.value);
+  }
 }
