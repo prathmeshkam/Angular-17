@@ -69,10 +69,18 @@
 <h1>Reactive Form</h1>
 <form [formGroup]="loginform" (ngSubmit)="getReactiveForm()">
     <input type="text" placeholder="Enter Name" formControlName="name">
+    <br> @if(name && name.invalid && name.touched){
+    <span style="color: red;">This is not valid</span> }
     <br><br>
     <input type="email" placeholder="Enter Email" formControlName="email">
+    <br> @if(email && email.invalid && email.touched){
+    <span style="color: red;">This is not Email</span> }
     <br><br>
-    <button>Submit</button>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <br> @if(password && password.invalid && password.touched){
+    <span style="color: red;">Password length minimum 8 character</span> }
+    <br><br>
+    <button [disabled]="loginform.invalid">Submit</button>
 </form>
 
 <router-outlet>

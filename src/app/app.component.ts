@@ -7,7 +7,7 @@ import { Child1Component } from './child1/child1.component';
 import {FormsModule} from '@angular/forms';
 import { AddtwoPipe } from './pipes/addtwo.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
-import { FormControl , FormGroup , FormControlName } from '@angular/forms';
+import { FormControl , FormGroup , Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -72,11 +72,25 @@ export class AppComponent {
 
   // Reactive Form
   loginform = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl('')
+    name: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.email]),
+    password:new FormControl('',[Validators.minLength(8)])
   })
 
   getReactiveForm(){
     console.warn(this.loginform.value);
+  }
+
+  get name()
+  {
+    return this.loginform.get('name');
+  }
+  get email()
+  {
+    return this.loginform.get('email'); 
+  }
+  get password()
+  {
+    return this.loginform.get('password');
   }
 }
