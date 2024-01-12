@@ -74,11 +74,11 @@
     <br><br>
     <input type="email" placeholder="Enter Email" formControlName="email">
     <br> @if(email && email.invalid && email.touched){
-    <span style="color: red;">This is not Email</span> }
+    <span appMakeRed>This is not valid Email</span> }
     <br><br>
     <input type="password" placeholder="Enter Password" formControlName="password">
     <br> @if(password && password.invalid && password.touched){
-    <span style="color: red;">Password length minimum 8 character</span> }
+    <span appMakeRed>Password length minimum 8 character</span> }
     <br><br>
     <button [disabled]="loginform.invalid">Submit</button>
 </form>

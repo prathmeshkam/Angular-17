@@ -8,11 +8,12 @@ import {FormsModule} from '@angular/forms';
 import { AddtwoPipe } from './pipes/addtwo.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormControl , FormGroup , Validators } from '@angular/forms';
+import { MakeRedDirective } from './directives/make-red.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule,AddtwoPipe,ReactiveFormsModule],
+  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule,AddtwoPipe,ReactiveFormsModule,MakeRedDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
