@@ -17,7 +17,7 @@ constructor(private route: ActivatedRoute){}
 
 ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.warn(this.id);
+    console.warn("Id is: ",this.id);
 }
 
 }
