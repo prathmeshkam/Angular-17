@@ -6,5 +6,6 @@ import { CurrencyConverterComponent } from './currency-converter/currency-conver
 export const routes: Routes = [
     {path:'child' , component:ChildComponent},
     {path:'child1' , component:Child1Component},
-    {path:'currency-converter',component:CurrencyConverterComponent}
+    {path:'currency-converter',component:CurrencyConverterComponent},
+    {path:'child/:id',component:ChildComponent}
 ];
