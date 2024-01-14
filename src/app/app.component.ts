@@ -9,11 +9,12 @@ import { AddtwoPipe } from './pipes/addtwo.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormControl , FormGroup , Validators } from '@angular/forms';
 import { MakeRedDirective } from './directives/make-red.directive';
+import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule,AddtwoPipe,ReactiveFormsModule,MakeRedDirective],
+  imports: [CommonModule, RouterOutlet,NgbAlertModule,ChildComponent,Child1Component,FormsModule,AddtwoPipe,ReactiveFormsModule,MakeRedDirective,CurrencyConverterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

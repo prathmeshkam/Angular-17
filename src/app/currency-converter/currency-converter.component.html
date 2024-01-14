@@ -1,0 +1,23 @@
+<mat-card>
+
+    <mat-card-content>
+
+        <form [formGroup]="curdata">
+            <mat-form-field>
+                <mat-label>Enter amount in INR</mat-label>
+                <input type="number" formControlName="amt" matInput><br>
+            </mat-form-field><br> @if(amt && amt.invalid){
+            <span>Please enter valid</span> }
+            <mat-form-field>
+                <mat-label>Enter the Currency</mat-label>
+                <input type="text" formControlName="currency" matInput>
+            </mat-form-field><br> @if(currency && currency.invalid){
+            <span>Please enter valid</span> }
+
+        </form>
+
+        <h1>Converted Amount is: <span appMakeRed>
+            {{ curdata?.get('amt')?.value ?? a | addtwo: (curdata?.get('currency')?.value ?? '') | currency: (curdata?.get('currency')?.value ?? '') }}</span></h1>
+
+    </mat-card-content>
+</mat-card>

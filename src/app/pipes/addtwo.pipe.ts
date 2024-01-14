@@ -6,9 +6,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AddtwoPipe implements PipeTransform {
 
-  transform(value: number, ...args: number[]): unknown {
-    const[x,y] = args;
-    return x+y;
+  transform(value: number, currency: string = ''): number {
+    
+    if(currency==='USD'){
+      return Math.floor(value/70);
+    }
+    if(currency==='GBP'){
+      return value * 0.0095;
+    }
+
+    return 0;
   }
 
 }
