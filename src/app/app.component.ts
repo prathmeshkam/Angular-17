@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChildComponent } from './child/child.component';
 import { Child1Component } from './child1/child1.component';
@@ -11,12 +11,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MakeRedDirective } from './directives/make-red.directive';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { NoPageComponent } from './no-page/no-page.component';
+import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, NgbAlertModule, ChildComponent, 
-  Child1Component, FormsModule, AddtwoPipe, ReactiveFormsModule, MakeRedDirective, CurrencyConverterComponent,NoPageComponent],
+  Child1Component, FormsModule, AddtwoPipe, ReactiveFormsModule, MakeRedDirective, 
+  CurrencyConverterComponent,NoPageComponent ,AboutComponent,RouterLink,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

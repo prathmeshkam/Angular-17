@@ -1,3 +1,17 @@
+<nav>
+    <img src="https://www.pngmart.com/files/21/Motivation-PNG-Isolated-HD.png" style="width: 80px;">
+
+    <ul>
+        <li><a routerLink="child/">Child Component</a></li>
+        <li><a routerLink='child1/'>Child 1 Component</a></li>
+        <li><a routerLink='currency-converter/'>Currency Converter</a></li>
+        <li><a routerLink="/child/10">Dyanamic Child Component</a></li>
+        <li><a routerLink="/child/20">Dyanamic Child Component 2</a></li>
+        <li><a routerLink="/child/20">Dyanamic Child Component 2</a></li>
+        <li><a routerLink="about/">About</a></li>
+    </ul>
+</nav>
+
 <div class="card" style="width:8cm; margin-left: 20cm;margin-top: 3cm;">
     <div class="card-body">
         <h1 class="card-title">To do list</h1>
@@ -53,6 +67,7 @@
 <h1>Custom Pipes</h1>
 <h1>{{20 |addtwo:40:60}}</h1> -->
 
+
 <h1>Template Driven Form</h1>
 
 <form #f="ngForm" (ngSubmit)="getform(f.controls)">
@@ -82,12 +97,11 @@
     <br><br>
     <button [disabled]="loginform.invalid">Submit</button>
 </form>
-<h1>Routing</h1>
-<a href="child/">Child Component</a> <br><br>
-<a href='child1/'>Child 1 Component</a><br><br>
-<a href='currency-converter/'>Currency Converter</a><br><br>
-<a href="/child/10">Dyanamic Child Component</a> <br><br>
-<a href="/child/20">Dyanamic Child Component 2</a> <br><br>
-<br><br>
+<!-- <h1>Routing</h1> -->
+
+
+
+
+<app-footer></app-footer>
 <router-outlet>
 </router-outlet>
