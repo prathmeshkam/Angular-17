@@ -1,4 +1,7 @@
 .footer {
     position: absolute;
     bottom: 10;
+    background-color: aquamarine;
+    width: 99%;
+    margin: 0px;
 }

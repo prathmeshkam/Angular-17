@@ -1,18 +1,18 @@
 <nav>
     <img src="https://www.pngmart.com/files/21/Motivation-PNG-Isolated-HD.png" style="width: 80px;">
 
-    <ul>
-        <li><a routerLink="child/">Child Component</a></li>
-        <li><a routerLink='child1/'>Child 1 Component</a></li>
-        <li><a routerLink='currency-converter/'>Currency Converter</a></li>
-        <li><a routerLink="/child/10">Dyanamic Child Component</a></li>
-        <li><a routerLink="/child/20">Dyanamic Child Component 2</a></li>
-        <li><a routerLink="/child/20">Dyanamic Child Component 2</a></li>
-        <li><a routerLink="about/">About</a></li>
+    <ul class="ulfoot">
+        <li class="lifoot"><a routerLink="child/">Child Component</a></li>
+        <li class="lifoot"><a routerLink='child1/'>Child 1 Component</a></li>
+        <li class="lifoot"><a routerLink='currency-converter/'>Currency Converter</a></li>
+        <li class="lifoot"><a routerLink="/child/10">Dyanamic Child Component</a></li>
+        <li class="lifoot"><a routerLink="/child/20">Dyanamic Child Component 2</a></li>
+        <li class="lifoot"><a routerLink="/child/20">Dyanamic Child Component 2</a></li>
+        <li class="lifoot"><a routerLink="about/">About</a></li>
     </ul>
 </nav>
 
-<div class="card" style="width:8cm; margin-left: 20cm;margin-top: 3cm;">
+<div class="card" style="width:8cm; margin-left: 20cm;margin-top: 3cm;background-color: antiquewhite;">
     <div class="card-body">
         <h1 class="card-title">To do list</h1>
         <input type="text" placeholder="Enter task" name="task" #task onfocus="this.value=''"> <br>
@@ -96,12 +96,17 @@
     <span appMakeRed>Password length minimum 8 character</span> }
     <br><br>
     <button [disabled]="loginform.invalid">Submit</button>
+
 </form>
+<br>
 <!-- <h1>Routing</h1> -->
+@for(p of user;track p) {
+<ul>
+    <li>{{p.name}}</li>
+</ul>
 
-
-
-
-<app-footer></app-footer>
+}
 <router-outlet>
 </router-outlet>
+<br>
+<app-footer></app-footer>

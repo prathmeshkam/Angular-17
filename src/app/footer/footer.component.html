@@ -1,1 +1,9 @@
-<h1 class="footer">footer</h1>
+<div class="footer">
+    <h1>Footer</h1>
+    @for(p of user;track p) {
+    <ul>
+        <li>{{p.name}}</li>
+    </ul>
+
+    }
+</div>

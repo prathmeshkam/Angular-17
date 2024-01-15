@@ -12,19 +12,19 @@
             padding: 1px;
         }
         
-        ul {
+        .ulfoot {
             float: right;
             list-style-type: none;
             margin-right: 50px;
             margin-top: 0.5cm;
         }
         
-        ul li {
+        .lifoot {
             display: inline-block;
             color: white;
         }
         
-        li a {
+        .lifoot a {
             color: white;
             text-decoration: none;
             padding: 5px;
