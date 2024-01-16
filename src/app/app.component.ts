@@ -15,13 +15,13 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserDataService } from './services/user-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { dataType } from './Datavalidate';
 
-
-interface dataType{
-  name:string,
-  age:number,
-  indian:boolean
-}
+// interface dataType{
+//   name:string,
+//   age:number,
+//   indian:boolean
+// }
 @Component({
   selector: 'app-root',
   standalone: true,
