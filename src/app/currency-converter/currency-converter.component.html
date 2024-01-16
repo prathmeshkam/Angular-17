@@ -5,7 +5,7 @@
         <form [formGroup]="curdata">
             <mat-form-field>
                 <mat-label>Enter amount in INR</mat-label>
-                <input type="number" formControlName="amt" matInput><br>
+                <input type="text" formControlName="amt" matInput><br>
             </mat-form-field><br> @if(amt && amt.invalid){
             <span>Please enter valid</span> }
             <mat-form-field>

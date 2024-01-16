@@ -14,13 +14,20 @@ import { NoPageComponent } from './no-page/no-page.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserDataService } from './services/user-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
+
+interface dataType{
+  name:string,
+  age:number,
+  indian:boolean
+}
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, NgbAlertModule, ChildComponent, 
   Child1Component, FormsModule, AddtwoPipe, ReactiveFormsModule, MakeRedDirective, 
-  CurrencyConverterComponent,NoPageComponent ,AboutComponent,RouterLink,FooterComponent,],
+  CurrencyConverterComponent,NoPageComponent ,AboutComponent,RouterLink,FooterComponent,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -92,10 +99,23 @@ export class AppComponent {
   get password() {
     return this.loginform.get('password');
   }
+
   user:any;
   constructor(private userdata:UserDataService){
-    console.warn("User: ",userdata.user())
-    this.user = userdata.user();
+    // console.warn("User: ",userdata.user())
+    // this.user = userdata.user();
+    
   }
+
+
+  getInfo()
+  {
+    let data:dataType = {
+      name:'Prathmesh',
+      age:55,
+      indian:true
+    }
+  }
+ 
 
 }
