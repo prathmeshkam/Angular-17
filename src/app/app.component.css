@@ -1,0 +1,25 @@
+nav {
+    background-color: blueviolet;
+    padding: 5px;
+    margin: 0px;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin-right: 50px;
+}
+
+ul li {
+    display: inline-block;
+    color: white;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 25px;
+}

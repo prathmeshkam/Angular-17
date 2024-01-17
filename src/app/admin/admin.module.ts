@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
-
-
-const routes: Routes = [
-  {path:'login',component:LoginComponent},
-  {path:'user',component:UserComponent},
-];
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forChild(routes),
     CommonModule,
+    AdminRoutingModule,
     LoginComponent,
     UserComponent
   ]
