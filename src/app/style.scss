@@ -1,0 +1,30 @@
+.mat-accordion {
+    width: 30%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.mat-expansion-panel {
+    background-color: pink;
+}
+
+.expansion-panel {
+    background-color: white;
+}
+
+.panel-head {
+    margin-left: 6.5cm;
+    font-weight: 500;
+}
+
+.btn-danger {
+    float: right;
+    width: 100px;
+    height: 25px;
+    font-size: small;
+    line-height: 5px;
+    font-weight: bold;
+}
