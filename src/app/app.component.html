@@ -29,12 +29,12 @@
         <li [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="Remove(i.id)">Remove</button></li>
     </ul>
 </div> -->
-<div style="width: 10cm;">
+<div class="paginated">
     <ul *ngFor="let i of paginatedTaskDetail">
         <li [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="removeTask(i.id)">Remove</button></li>
     </ul>
 
-    <mat-paginator [length]="taskdetail.length" [pageSize]="5" [pageSizeOptions]="[5,7]">
+    <mat-paginator class="paginator" [length]="taskdetail.length" [pageSize]="5" [pageSizeOptions]="[5,7]">
     </mat-paginator>
 </div>
 

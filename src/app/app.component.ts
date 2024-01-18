@@ -11,7 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
   standalone: true,
   imports: [CommonModule, RouterOutlet,MatExpansionModule,RouterLink,MatPaginatorModule],
   templateUrl: './app.component.html',
-  styleUrl: './style.scss'
+  styleUrls: ['./style.scss','./app.component.css']
 })
 export class AppComponent {
   title = 'todolist';

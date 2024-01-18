@@ -1,3 +1,14 @@
-.mat-accordion {
-    height: 5cm;
+.paginated {
+    width: 15cm;
+    margin-left: 21cm;
+}
+
+.paginator {
+    background-color: rgb(183, 199, 79);
+    color: black;
+    width: 15cm;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 0.7cm;
+    border-radius: 10px;
 }
