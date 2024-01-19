@@ -10,7 +10,7 @@
         <div class="card custom-card">
             <div class="card-body">
                 <h1 class="card-title">To-do list</h1>
-                <input type="text" placeholder="Enter task" name="task" #task> <br>
+                <input type="text" placeholder="Enter task" name="task" (focus)="(task.value='')" #task> <br>
                 <br>
                 <button class="btn btn-success" (click)="addTask(task.value)" (click)="high()">Add Task</button>
                 <br>
@@ -23,22 +23,21 @@
         </div>
     </mat-expansion-panel>
 </mat-accordion>
-<!-- 
-<div>
-    <ul *ngFor="let i of taskdetail">
-        <li [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="Remove(i.id)">Remove</button></li>
-    </ul>
-</div> -->
 <div class="paginated">
-    <ul *ngFor="let i of paginatedTaskDetail">
-        <li [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="removeTask(i.id)">Remove</button></li>
+    <ul>
+        <!-- <li class='listpagi' [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="removeTask(i.id)">Remove</button></li> -->
+        <mat-selection-list #task>
+            @for (task of paginatedTaskDetail; track task) {
+            <mat-list-option>{{task.name}}<button class="btn btn-danger" (click)="removeTask(task.id)">Remove</button></mat-list-option>
+            }
+        </mat-selection-list>
     </ul>
 
     <mat-paginator class="paginator" [length]="taskdetail.length" [pageSize]="5" [pageSizeOptions]="[5,7]">
     </mat-paginator>
 </div>
 
-
+<button (click)="getadmin()">admin</button>
 
 <router-outlet>
 </router-outlet>

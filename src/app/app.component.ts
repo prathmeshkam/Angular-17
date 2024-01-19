@@ -1,15 +1,16 @@
-import { Component ,ViewChild} from '@angular/core';
+import { Component ,ViewChild,ViewContainerRef,ComponentFactoryResolver} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatPaginator } from '@angular/material/paginator';
-
+import {MatListModule} from '@angular/material/list';
+import { AdminComponent } from './admin/admin.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,MatExpansionModule,RouterLink,MatPaginatorModule],
+  imports: [CommonModule, RouterOutlet,MatExpansionModule,RouterLink,MatPaginatorModule,MatListModule,AdminComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./style.scss','./app.component.css']
 })
@@ -49,6 +50,17 @@ export class AppComponent {
   }
   p:number = 1;
   collection:any[] = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+
+  constructor(private container:ViewContainerRef , private cfr:ComponentFactoryResolver){}
+
+  async getadmin(){
+    this.container.clear();
+
+    const {AdminComponent} = await import('./admin/admin.component');
+
+    this.container.createComponent(
+      this.cfr.resolveComponentFactory(AdminComponent));
+  }
 
 }
 
