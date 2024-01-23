@@ -1,0 +1,15 @@
+<p>admin works!</p>
+
+
+<ul>
+    <li>
+        <a routerLink="adminlogin">Login</a>
+    </li>
+</ul>
+
+<form #f="ngForm">
+    <input type="text" ngModel #task>
+    <button (click)="check(task.value)">submit</button>
+</form>
+
+<router-outlet></router-outlet>
