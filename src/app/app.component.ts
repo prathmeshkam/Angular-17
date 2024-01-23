@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from './popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { NgModel } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -44,26 +45,51 @@ export class AppComponent {
     this.expanded = !this.expanded  ;
   }
 
+  // addTask(item: string): void {
+  //   const newTask = { id: this.taskdetail.length + 1, name: item };
+  //   this.taskdetail = [newTask, ...this.taskdetail];
+  //   this.totalTask++;
+  //   this.paginateTaskDetail();
+  // }
+
+  taskSet: Set<string> = new Set<string>();
+
+  // Function to add a task
   addTask(item: string): void {
-    const newTask = { id: this.taskdetail.length + 1, name: item };
-    this.taskdetail = [newTask, ...this.taskdetail];
-    this.totalTask++;
-    this.paginateTaskDetail();
+    if (this.taskSet.has(item)) {
+      // Show alert if the task is already in the set
+      alert('Task already exists!');
+    } else {
+      this.totalTask++;
+      // Add the task to the Set
+      this.taskSet.add(item);
+      // Convert the Set to an array for display
+      this.taskdetail = Array.from(this.taskSet).map((name, id) => ({ id, name }));
+      // Update the paginated task details
+      this.paginateTaskDetail();
+    }
   }
-
-  high(): void {
-    // Your existing high function
-  }
-  inputElement='';
-  clearInput(): void {
-    this.inputElement = ''; // Clear the input value
-  }
-
+  
+  // Function to remove a task
   removeTask(id: number): void {
-    this.taskdetail = this.taskdetail.filter((i) => i.id !== id);
-    this.totalTask--;
-    this.paginateTaskDetail();
+    const taskToRemove = this.taskdetail.find(task => task.id === id);
+    if (taskToRemove) {
+      this.totalTask--;
+      // Remove the task from the Set
+      this.taskSet.delete(taskToRemove.name);
+      // Convert the Set to an array for display
+      this.taskdetail = Array.from(this.taskSet).map((name, id) => ({ id, name }));
+      // Update the paginated task details
+      this.paginateTaskDetail();
+    }
   }
+ 
+
+  // removeTask(id: number): void {
+  //   this.taskdetail = this.taskdetail.filter((i) => i.id !== id);
+  //   this.totalTask--;
+  //   this.paginateTaskDetail();
+  // }
 
   private paginateTaskDetail(): void {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
@@ -95,7 +121,9 @@ export class AppComponent {
     console.warn(newName);
   }
  
-
+  clearInput(taskInput: NgModel): void {
+    taskInput.reset(); // Reset the input value
+  }
 
 
 

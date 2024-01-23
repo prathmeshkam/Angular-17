@@ -16,8 +16,8 @@
                         <span style="color: red;font-weight: 500;">Make sure that you enter correct input.</span> }
 
                         <br><br> @if(!flag){
-                        <button matRipple [matRippleColor]="myColor" [disabled]="task.invalid" class="btn btn-success" (click)="addTask(task.value)" (click)="high()">Add Task</button> &nbsp; }@else{
-                        <button matRipple [matRippleColor]="myColor" [disabled]="task.invalid" class="btn btn-success" (click)="updateTask(task.value)" (click)="high()">Update</button> &nbsp; }
+                        <button matRipple [matRippleColor]="myColor" [disabled]="task.invalid" class="btn btn-success" (click)="addTask(task.value);clearInput(task)">Add Task</button> &nbsp; }@else{
+                        <button matRipple [matRippleColor]="myColor" [disabled]="task.invalid" class="btn btn-success" (click)="updateTask(task.value);clearInput(task)">Update</button> &nbsp; }
                         <ng-content></ng-content>
                         <br>
                     </form>
