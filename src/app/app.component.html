@@ -1,43 +1,86 @@
 <mat-accordion class="mat-accordion custom-accordion">
-    <mat-expansion-panel hideToggle class="custom-expansion-panel">
+    <mat-expansion-panel hideToggle class="custom-expansion-panel" (opened)="onPanelOpened()">
 
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <h1 class="panel-head">Todo list</h1>
+                <h1 class="panel-head">{{ expanded ? 'Total Task - '+ totalTask : 'Todo list' }}</h1>
             </mat-panel-title>
         </mat-expansion-panel-header>
 
         <div class="card custom-card">
-            <div class="card-body">
-                <h1 class="card-title">To-do list</h1>
-                <input type="text" placeholder="Enter task" name="task" (focus)="(task.value='')" #task> <br>
-                <br>
-                <button class="btn btn-success" (click)="addTask(task.value)" (click)="high()">Add Task</button>
-                <br>
-                <!-- <div class="card-text" style="margin-top: 10px;">
+            <div class="container text-center">
+                <div class="card-body">
+                    <h1 class="card-title" style="font-size: 35px;font-weight: 400;font-family:Bahnschrift Light">Add your tasks</h1>
+                    <form #form="ngForm">
+                        <input type="text" autocomplete="off" class="form-control form-control-lg text-center" style="width: 8cm; height: 1cm;margin-left: 3.3cm;" placeholder="Enter task" name="task" ngModel pattern="[A-Za-z ]+$" required #task="ngModel">                        <br> @if(task.invalid && task.touched){
+                        <span style="color: red;font-weight: 500;">Make sure that you enter correct input.</span> }
+
+                        <br><br> @if(!flag){
+                        <button matRipple [matRippleColor]="myColor" [disabled]="task.invalid" class="btn btn-success" (click)="addTask(task.value)" (click)="high()">Add Task</button> &nbsp; }@else{
+                        <button matRipple [matRippleColor]="myColor" [disabled]="task.invalid" class="btn btn-success" (click)="updateTask(task.value)" (click)="high()">Update</button> &nbsp; }
+                        <ng-content></ng-content>
+                        <br>
+                    </form>
+
+                    <!-- <div class="card-text" style="margin-top: 10px;">
                     <ul *ngFor="let i of taskdetail">
                         <li [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="Remove(i.id)">Remove</button></li>
                     </ul>
                 </div> -->
+                </div>
+                <!-- @if(flag){
+                <div class="card-body">
+                    <form #form="ngForm">
+                        <h1 class="card-title">Edit Your Task</h1>
+                        <input type="text" placeholder="Enter task" name="task" ngModel pattern="[A-Za-z ]+$" required #edited="ngModel"> <br> @if(edited.invalid && edited.touched){
+                        <span style="color: red;font-weight: 500;">Make sure that you enter correct input.</span> }
+                    </form>
+                    <br>
+
+                    <button matRipple [matRippleColor]="myColor" [disabled]="edited.invalid" class="btn btn-success" (click)="updateTask(task.value)" (click)="high()">Update</button> &nbsp;
+
+                    <ng-content></ng-content>
+                    <br>
+                </div>
+                } -->
             </div>
         </div>
     </mat-expansion-panel>
 </mat-accordion>
 <div class="paginated">
-    <ul>
-        <!-- <li class='listpagi' [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="removeTask(i.id)">Remove</button></li> -->
-        <mat-selection-list #task>
-            @for (task of paginatedTaskDetail; track task) {
-            <mat-list-option>{{task.name}}<button class="btn btn-danger" (click)="removeTask(task.id)">Remove</button></mat-list-option>
-            }
-        </mat-selection-list>
-    </ul>
+
+    <!-- <li class='listpagi' [style.backgroundColor]="color">{{ i.name }} <button class="btn btn-danger" (click)="removeTask(i.id)">Remove</button></li> -->
+
+    @for (task of paginatedTaskDetail; track task;) {
+    <div style="margin: 10px;height: 1.7cm;border: 1px solid greenyellow;padding: 5px;margin-left: 2cm;">
+        <ul>
+            <li>
+
+                <span>{{task.name}}</span>
+                <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" style="float: right; display: flex; align-items: flex-start;">
+                    <mat-button-toggle matRipple [matRippleColor]="remove" (click)="removeTask(task.id)" value="bold" style="font-weight: 500; color: red;">Remove</mat-button-toggle>
+                    <mat-button-toggle matRipple [matRippleColor]="e" value="bold" (click)="edit(task.id)" style="font-weight: 500; color: green;">Edit</mat-button-toggle>
+                </mat-button-toggle-group>
+
+                <div style="margin-top: 2px; margin-left: 9cm;">
+                    <span style="background-color: yellowgreen;">{{ date | date }}</span>
+                </div>
+
+            </li>
+
+        </ul>
+
+    </div>
+    }
 
     <mat-paginator class="paginator" [length]="taskdetail.length" [pageSize]="5" [pageSizeOptions]="[5,7]">
     </mat-paginator>
 </div>
 
-<button (click)="getadmin()">admin</button>
+
+<!-- <button (click)="getadmin()">admin</button> Lazy Loading of component-->
+
+
 
 <router-outlet>
 </router-outlet>
