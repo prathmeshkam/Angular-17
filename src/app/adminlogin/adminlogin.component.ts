@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './adminlogin.component.css'
 })
 export class AdminloginComponent {
+constructor(){
+  localStorage.setItem('login','false');
+}
 
 }
