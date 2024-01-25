@@ -7,6 +7,7 @@ import { InvalidComponent } from './invalid/invalid.component';
 import { canActivateGuard } from './guards/can-activate.guard';
 import { canActivateChildGuard } from './guards/can-activate-child.guard';
 import { canDeactivateGuard } from './guards/can-deactivate.guard';
+import { DataComponent } from './data/data.component';
 
 
 
@@ -15,6 +16,7 @@ export const routes: Routes = [
 {path:'admin' , component:AdminComponent,canActivateChild:[canActivateChildGuard] ,canDeactivate:[canDeactivateGuard] , children:[{path:'adminlogin',component:AdminloginComponent }]},
 {path:'contact' , component:ContactComponent,canActivate:[canActivateGuard], },
 {path:'user' , component:UserComponent},
+{path:'data' , component:DataComponent},
 {path:'**' , component:InvalidComponent},
 {path:'invalid' , component:InvalidComponent},
 ];

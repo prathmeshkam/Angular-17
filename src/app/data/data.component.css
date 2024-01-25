@@ -1,0 +1,8 @@
+.mdc-data-table__table {
+    min-width: 20%;
+    border: 0;
+    white-space: nowrap;
+    border-spacing: 0;
+    margin-left: 40%;
+    margin-top: 100px;
+}
