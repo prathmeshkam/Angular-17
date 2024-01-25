@@ -99,7 +99,7 @@ constructor(private router:Router,){}
 
   name:string='';
 
-
+  greet:string = "Good Night";
 
 
 

@@ -1,4 +1,4 @@
-import { Component,Output , EventEmitter } from '@angular/core';
+import { Component,Output , EventEmitter ,Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -15,4 +15,6 @@ fire()
 {
   this.event.emit(this.name);
 }
+
+@Input() greetData:string='';
 }
