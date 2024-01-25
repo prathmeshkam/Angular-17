@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output , EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
+name = "Prathmesh";
+@Output() public event = new EventEmitter();
 
+fire()
+{
+  this.event.emit(this.name);
+}
 }

@@ -16,6 +16,7 @@
     <button (click)="cancel()">Cancel</button>
 
 </div> -->
-
+<app-user (event)="name=$event"></app-user>
+<h1>{{name}}</h1>
 <router-outlet>
 </router-outlet>

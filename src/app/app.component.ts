@@ -97,7 +97,7 @@ constructor(private router:Router,){}
     this.sub.unsubscribe();
   }
 
-
+  name:string='';
 
 
 
