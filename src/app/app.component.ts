@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
@@ -101,8 +101,12 @@ constructor(private router:Router,){}
 
   greet:string = "Good Night";
 
+@ViewChild('ul') p!:ElementRef; 
 
-
+ngAfterViewInit(){
+  console.log(this.p);
+  this.p.nativeElement.style.backgroundColor="pink";
+}
 
 
 }
