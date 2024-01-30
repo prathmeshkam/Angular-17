@@ -83,6 +83,10 @@
 <!-- 
 <app-admin></app-admin>
  -->
-
+@for(p of nums;track p;let i = $index) {
+<ul>
+    <li>{{p}}{{i}}</li>
+</ul>
+}
 <router-outlet>
 </router-outlet>
