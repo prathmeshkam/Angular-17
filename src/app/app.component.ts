@@ -19,11 +19,13 @@ import { GetdataService } from './services/getdata.service';
 import {MatTableModule} from '@angular/material/table';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import swal from 'sweetalert2';
+import { SplitPipe } from './split.pipe';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet,MatExpansionModule,RouterLink,MatPaginatorModule,MatListModule,AdminComponent,
-    FormsModule,MatRippleModule,MatButtonToggleModule,PopupComponent,MatDialogModule,MatButtonModule,HttpClientModule,SweetAlert2Module],
+    FormsModule,MatRippleModule,MatButtonToggleModule,PopupComponent,MatDialogModule,MatButtonModule,HttpClientModule,
+    SweetAlert2Module,SplitPipe],
   providers:[GetdataService],
   templateUrl: './app.component.html',
   styleUrls: ['./style.scss','./app.component.css']
@@ -135,7 +137,8 @@ export class AppComponent {
     taskInput.reset(); // Reset the input value
   }
 
-  nums = [1,2,3,4,5,6,7,8,9]
+  name:string = 'Prathmesh';
+
 
 
 

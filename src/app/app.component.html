@@ -83,10 +83,7 @@
 <!-- 
 <app-admin></app-admin>
  -->
-@for(p of nums;track p;let f= $first;let l = $last) {
-<ul>
-    <li [ngClass]="{first:f}">{{p}}</li>
-</ul>
-}
+@for(p of name;track p) {
+<span>{{p | split}}</span> }
 <router-outlet>
 </router-outlet>
