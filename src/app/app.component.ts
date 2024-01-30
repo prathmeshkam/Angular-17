@@ -164,7 +164,6 @@ export class AppComponent {
 
 
 
-
   // openDialog(): void {
   //   const dialogRef = this.dialog.open(PopupComponent, {
   //     width: '250px', // Set the width as needed

@@ -24,3 +24,11 @@ li {
 .container {
     display: inline-flex;
 }
+
+.hide {
+    display: none;
+}
+
+.first {
+    background-color: blue;
+}
