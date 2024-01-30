@@ -14,11 +14,17 @@ import { PopupComponent } from './popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModel } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { GetdataService } from './services/getdata.service';
+import {MatTableModule} from '@angular/material/table';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet,MatExpansionModule,RouterLink,MatPaginatorModule,MatListModule,AdminComponent,
-    FormsModule,MatRippleModule,MatButtonToggleModule,PopupComponent,MatDialogModule,MatButtonModule],
+    FormsModule,MatRippleModule,MatButtonToggleModule,PopupComponent,MatDialogModule,MatButtonModule,HttpClientModule,SweetAlert2Module],
+  providers:[GetdataService],
   templateUrl: './app.component.html',
   styleUrls: ['./style.scss','./app.component.css']
 })
@@ -68,6 +74,7 @@ export class AppComponent {
       // Update the paginated task details
       this.paginateTaskDetail();
     }
+    swal.fire("Awesome","Task Added Successfully","success");
   }
   
   // Function to remove a task
@@ -79,9 +86,11 @@ export class AppComponent {
       this.taskSet.delete(taskToRemove.name);
       // Convert the Set to an array for display
       this.taskdetail = Array.from(this.taskSet).map((name, id) => ({ id, name }));
+      this.taskdetail = this.taskdetail.filter((i) => i.id !== id);
       // Update the paginated task details
       this.paginateTaskDetail();
     }
+    swal.fire("","Task Removed Successfully","error");
   }
  
 
@@ -119,11 +128,14 @@ export class AppComponent {
     }
 
     console.warn(newName);
+    swal.fire("","Task Updated Successfully","success");
   }
  
   clearInput(taskInput: NgModel): void {
     taskInput.reset(); // Reset the input value
   }
+
+
 
 
 
