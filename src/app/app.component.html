@@ -5,6 +5,7 @@
         <li (click)="user()">User</li>
         <li (click)="contact()">Contact</li>
         <li (click)="db()">Db</li>
+        <li (click)="shape()">Shape</li>
     </ul>
 </nav>
 
@@ -16,8 +17,9 @@
     <button (click)="cancel()">Cancel</button>
 
 </div> -->
-<app-user (event)="name=$event"></app-user>
+<!-- <app-user (event)="name=$event"></app-user>
 <app-user [greetData]="greet"></app-user>
-<h1>{{name}}</h1>
+<h1>{{name}}</h1> -->
+
 <router-outlet>
 </router-outlet>

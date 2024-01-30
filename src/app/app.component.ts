@@ -13,13 +13,14 @@ import { DataComponent } from './data/data.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DataserviceService } from './services/dataservice.service';
+import { ShapeComponent } from './shape/shape.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet,RouterLink,MatButtonModule,AdminComponent,AdminloginComponent,
     ContactComponent,UserComponent,
-    InvalidComponent,DataComponent,HttpClientModule],
+    InvalidComponent,DataComponent,HttpClientModule,ShapeComponent],
   providers:[DataserviceService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -41,6 +42,9 @@ constructor(private router:Router,){}
   }
   db(){
     this.router.navigate(['data']);
+  }
+  shape(){
+    this.router.navigate(['shape']);
   }
   
 
@@ -101,12 +105,17 @@ constructor(private router:Router,){}
 
   greet:string = "Good Night";
 
-@ViewChild('ul') p!:ElementRef; 
+  p:number = 1;
 
-ngAfterViewInit(){
-  console.log(this.p);
-  this.p.nativeElement.style.backgroundColor="pink";
-}
+  
+// @ViewChild('ul') p!:ElementRef; 
+
+// ngAfterViewInit(){
+//   console.log(this.p);
+//   this.p.nativeElement.style.backgroundColor="pink";
+  
+  
+// }
 
 
 }

@@ -8,6 +8,7 @@ import { canActivateGuard } from './guards/can-activate.guard';
 import { canActivateChildGuard } from './guards/can-activate-child.guard';
 import { canDeactivateGuard } from './guards/can-deactivate.guard';
 import { DataComponent } from './data/data.component';
+import { ShapeComponent } from './shape/shape.component';
 
 
 
@@ -17,6 +18,7 @@ export const routes: Routes = [
 {path:'contact' , component:ContactComponent,canActivate:[canActivateGuard], },
 {path:'user' , component:UserComponent},
 {path:'data' , component:DataComponent},
+{path:'shape' , component:ShapeComponent},
 {path:'**' , component:InvalidComponent},
 {path:'invalid' , component:InvalidComponent},
 ];
